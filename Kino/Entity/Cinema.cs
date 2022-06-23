@@ -13,7 +13,7 @@ namespace Kino.Entity
         public int NumberOfRoom { get; set; }
         public string Email { get; set; }
         public string Telephone { get; set; }
-        public int AdresId { get; set; }
+        public int AddressId { get; set; }
         public virtual Address Address { get; set; }
         public virtual List<Film> Film { get; set; }
 
