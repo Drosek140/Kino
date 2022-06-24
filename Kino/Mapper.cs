@@ -18,7 +18,7 @@ namespace Kino
                 .ForMember(t => t.Number, c => c.MapFrom(t => t.Address.Number));
             CreateMap<Film, FilmDto>();
             CreateMap<CreateCinemaDto,Cinema>().ForMember(t=>t.Address,a=>a.MapFrom(t=>new Address(){City = t.City,PostalCode=t.PostalCode,Street=t.Street,Number=t.Number }));
-            CreateMap<CreateFilmDto, FilmDto>();
+            CreateMap<CreateFilmDto, Film>();
         }
     }
 }

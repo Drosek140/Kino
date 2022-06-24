@@ -30,8 +30,10 @@ namespace Kino
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<ICinemaService, CinemaService>();
+            services.AddScoped<IFilmService, FilmsService>();
             services.AddDbContext<CinemaDbContext>();
             services.AddScoped<CinemaSeeder>();
+
             services.AddControllers();
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddSwaggerGen(c =>
