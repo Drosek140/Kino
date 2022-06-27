@@ -30,7 +30,7 @@ namespace Kino.Services
         }
         public int Create(CreateFilmDto dto, int cinemaId)
         {
-            var cinema = GetCinema(cinemaId);
+           
             var film = mapper.Map<Film>(dto);
             film.CinemaId = cinemaId;
             cinemaDbContext.Films.Add(film);  
@@ -76,7 +76,7 @@ namespace Kino.Services
         public List<FilmDto> GetAll(int cinemaId)
         {
             var cinema = GetCinema(cinemaId);
-            var film = cinemaDbContext.Films.ToList();
+           
             var filmsdto = mapper.Map<List<FilmDto>>(cinema.Film);
             return filmsdto;
 

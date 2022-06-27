@@ -21,6 +21,7 @@ namespace Kino.Entity
             modelBuilder.Entity<Cinema>().Property(p => p.Email).IsRequired().HasMaxLength(20);
             modelBuilder.Entity<User>().Property(p => p.Email).IsRequired().HasMaxLength(20);
             modelBuilder.Entity<User>().Property(p => p.FirstName).IsRequired().HasMaxLength(20);
+            modelBuilder.Entity<Role>().Property(p => p.Id).IsRequired().HasMaxLength(20);
             modelBuilder.Entity<User>().Property(p => p.LastName).IsRequired().HasMaxLength(20);
             modelBuilder.Entity<Address>().Property(p => p.City).IsRequired().HasMaxLength(20);
             modelBuilder.Entity<Address>().Property(p => p.Street).IsRequired().HasMaxLength(20);

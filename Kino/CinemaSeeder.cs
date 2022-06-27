@@ -18,6 +18,7 @@ namespace Kino
         {
             if (dbContext.Database.CanConnect())
             {
+               
                 if (!dbContext.Cinemas.Any())
                 {
                     var cinema = GetCinemas();
