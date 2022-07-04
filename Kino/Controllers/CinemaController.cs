@@ -1,5 +1,6 @@
 ﻿using Kino.dtos;
 using Kino.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ namespace Kino.Controllers
 {
     [Route("Cinema")]
     [ApiController]
+    [Authorize]
     public class CinemaController : Controller
     {
         private readonly ICinemaService cinemaservice;
@@ -19,18 +21,21 @@ namespace Kino.Controllers
             this.cinemaservice = cinemaService;
         }
         [HttpGet]
+        
         public ActionResult<List<CinemaDto>> GetAll()
         {
 
             return Ok(cinemaservice.GetAll());
         }
         [HttpGet("{Id}")]
+        [AllowAnonymous]
         public ActionResult<CinemaDto>GetById([FromRoute]int Id)
         {
 
             return Ok(cinemaservice.GetById(Id));
         }
-        [HttpPost]
+        [HttpPost]      
+        [Authorize(Roles = "Manager")]
         public ActionResult Create([FromBody] CreateCinemaDto dto)
         {
             
