@@ -56,7 +56,7 @@ namespace Kino
                     {
                         new Film()
                         {
-                            Name = "Wścieklły Pieterwas",
+                            Name = "Wścieklły pies",
                             Description = "Krótki opis filmu nie wiem",
                             Kind = "Horror",
                             Start = DateTime.Parse("2022-07-30 22:12 PM"),

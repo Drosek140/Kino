@@ -42,6 +42,7 @@ namespace Kino.Controllers
             return Ok(cinemaservice.Create(dto));
         }
         [HttpDelete("{Id}")]
+        [Authorize(Roles = "Manager")]
         public ActionResult Delete([FromRoute] int Id)
         {
             cinemaservice.DeleteById(Id);
@@ -49,6 +50,7 @@ namespace Kino.Controllers
 
         }
         [HttpPut("{Id}")]
+        [Authorize(Roles = "Manager")]
         public ActionResult Update([FromRoute] int Id,[FromBody] UpdateCinemaDto dto)
         {
             cinemaservice.Edit(Id, dto);

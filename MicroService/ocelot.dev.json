@@ -9,7 +9,7 @@
           "Port": 5001
         }
       ],
-      "UpstreamPathTemplate": "/Cinema",
+      "UpstreamPathTemplate": "/Gateway/Cinema",
       "UpstreamHttpMethod": [ "Get" ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer",
